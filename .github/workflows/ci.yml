@@ -1,0 +1,19 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - initial-crate-setup
+
+jobs:
+  verify-licensing:
+    name: verify licensing
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: jacderida/verify-licensing-info@verify-github-license
+        name: verify licensing
+        with:
+          company-name: MaidSafe
