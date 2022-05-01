@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: jacderida/verify-licensing-info@verify-github-license
+      - uses: jacderida/verify-licensing-info@use-gpl3-license
         name: verify licensing
         with:
           company-name: MaidSafe
