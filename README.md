@@ -4,6 +4,6 @@ A little repository for experimenting with automated enforcement of licensing de
 
 ## License
 
-This repository is licensed under the GNU General Public License v3.0 only.
+This repository is licensed under the BSD-3-Clause license.
 
 See the [LICENSE](LICENSE) file for more details.
