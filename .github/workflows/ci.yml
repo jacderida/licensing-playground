@@ -3,7 +3,7 @@ name: ci
 on:
   push:
     branches:
-      - switch-back-to-bsd3-2
+      - compat-with-workspace
 
 jobs:
   verify-licensing:
@@ -13,7 +13,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: jacderida/verify-licensing-info@main
+      - name: install rust
+        id: toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+          override: true
+      - name: install ripgrep
+        run: cargo install ripgrep
+      - uses: jacderida/verify-licensing-info@workspace-repo
         name: verify licensing
         with:
           company-name: MaidSafe
